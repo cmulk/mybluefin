@@ -18,7 +18,6 @@ rpm-ostree install micro wget
 wget https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v6.1.0-2/fedora-41-displaylink-1.14.7-4.github_evdi.x86_64.rpm
 rpm-ostree install ./fedora-41-displaylink-1.14.7-4.github_evdi.x86_64.rpm
 
-dkms add evdi/1.14.7
 dkms autoinstall
 
 # this would install a package from rpmfusion
