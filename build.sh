@@ -18,7 +18,10 @@ rpm-ostree install micro wget
 wget https://github.com/displaylink-rpm/displaylink-rpm/releases/download/v6.1.0-2/fedora-41-displaylink-1.14.7-4.github_evdi.x86_64.rpm
 rpm-ostree install ./fedora-41-displaylink-1.14.7-4.github_evdi.x86_64.rpm
 
-dkms autoinstall
+dkms status
+KERN=$(ls /usr/src/kernels | head --lines=1)
+dkms install evdi/1.14.7 -k $KERN
+dkms status
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
