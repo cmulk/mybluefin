@@ -51,6 +51,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## add akmods
 COPY --from=ghcr.io/ublue-os/akmods-extra:coreos-stable-41 /rpms /tmp/rpms
 RUN find /tmp/rpms
+RUN dnf copr enable ublue-os/akmods
 RUN rpm-ostree install /tmp/rpms/kmods/kmod-evdi*.rpm
 
 COPY build.sh /tmp/build.sh
